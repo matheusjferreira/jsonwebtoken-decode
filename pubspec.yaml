@@ -1,6 +1,6 @@
 name: jsonwebtoken_decode
 description: Package for decoding Json Web Token (JWT), and selecting specific claims.
-version: 1.0.0
+version: 1.0.2
 homepage: https://github.com/matheusjferreira/jsonwebtoken-decode
 
 environment:
