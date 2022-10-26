@@ -18,7 +18,10 @@ Package for decoding Json Web Token (JWT), and selecting specific claims.
 ## Features
 
 * Decode jwt;
-* Get header and payload claims;
+* Get Header and Payload claims;
+* Get OpenID claims;
+* Get Keycloak claims;
+* Get custom claims;
 
 ![example](https://user-images.githubusercontent.com/59848966/198104955-e53f6b7a-4299-43f7-b2ab-4c97732ea648.png)
 
@@ -46,3 +49,6 @@ Text('${_payload!.claim('name')'),
 ```
 
 See more: [example](/example/lib/main.dart);
+
+Created following iana guidelines: https://www.iana.org/assignments/jwt/jwt.xhtml;
+Sample token from jwt official website: https://jwt.io/;
