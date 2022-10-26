@@ -20,7 +20,7 @@ Package for decoding Json Web Token (JWT), and selecting specific claims.
 * Decode jwt;
 * Get header and payload claims;
 
-![example](https://user-images.githubusercontent.com/59848966/198104486-fbaaaeaf-e257-4400-8ec3-427c282019dc.png)
+![example](https://user-images.githubusercontent.com/59848966/198104955-e53f6b7a-4299-43f7-b2ab-4c97732ea648.png)
 
 ## Usage
 
