@@ -51,4 +51,5 @@ Text('${_payload!.claim('name')'),
 See more: [example](/example/lib/main.dart);
 
 Created following iana guidelines: https://www.iana.org/assignments/jwt/jwt.xhtml;
+
 Sample token from jwt official website: https://jwt.io/;
