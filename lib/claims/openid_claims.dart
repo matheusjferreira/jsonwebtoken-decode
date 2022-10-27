@@ -1,23 +1,23 @@
-import 'claims.dart';
+import './payload_claims.dart';
 
-class OpenIdClaims extends Claims {
-  OpenIdClaims(super.payload);
+class OpenIdClaims extends PayloadClaims {
+  OpenIdClaims(super.jwtBuilder);
 
-  String get name => part.claim("name");
+  String get name => claim("name");
 
-  String get email => part.claim("email");
+  String get email => claim("email");
 
-  String get givenName => part.claim("given_name");
+  String get givenName => claim("given_name");
 
-  String get familyName => part.claim("family_name");
+  String get familyName => claim("family_name");
 
-  String get preferredUsername => part.claim("preferred_username");
+  String get preferredUsername => claim("preferred_username");
 
-  String get sid => part.claim("sid");
+  String get sid => claim("sid");
 
-  String get azp => part.claim("azp");
+  String get azp => claim("azp");
 
-  String get sessionState => part.claim("session_state");
+  String get sessionState => claim("session_state");
 
-  bool get emailVerified => part.claim("email_verified");
+  bool get emailVerified => claim("email_verified");
 }

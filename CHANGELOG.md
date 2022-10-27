@@ -1,3 +1,7 @@
+## 1.1.0
+
+* Added new feature claims.
+
 ## 1.0.4
 
 * TODO: update exports (jsonwebtoken_decode.dart).
