@@ -30,23 +30,69 @@ Package for decoding Json Web Token (JWT), and selecting specific claims.
 ```dart
 // ...
 
-final String _token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-JWTApp? _app;
+final String _token ="valid_token";
+JwtBuilder? _jwtBuilder;
 Payload? _payload;
 Header? _header;
 
 @override
 void initState() {
     super.initState();
-    _app = JWTApp(_token);
-    _payload = _app!.payload;
-    _header = _app!.header;
+    _jwtBuilder = JwtBuilder.fromToken(_token);
+    _payload = _jwtBuilder!.payload;
+    _header = _jwtBuilder!.header;
 }
 
 // ...
 
 Text('${_payload!.claim('name')'),
 ```
+
+
+
+## Usage Claims
+
+```dart
+// ...
+
+final String _token ="valid_token";
+JwtBuilder? _jwtBuilder;
+PayloadClaims? _payloadClaims;
+OpenIdClaims? _openIdClaims;
+KeycloakClaims? _keycloakClaims;
+HeaderClaims? _headerClaims;
+
+@override
+void initState() {
+    super.initState();
+    _jwtBuilder = JwtBuilder.fromToken(_token);
+    _payloadClaims = PayloadClaims(_jwtBuilder!);
+    _openIdClaims = OpenIdClaims(_jwtBuilder!);
+    _keycloakClaims = KeycloakClaims(_jwtBuilder!);
+    _headerClaims = HeaderClaims(_jwtBuilder!);
+}
+
+// ...
+
+Text('${_payloadClaims!.sub'),
+Text('${_openIdClaims!.name'),
+Text('${_keycloakClaims!.rolesRealmAccess'),
+Text('${_headerClaims!.typ'),
+```
+
+
+
+## Create your own PayloadClaims class
+
+```dart
+class MyClaims extends PayloadClaims {
+  MyClaims(super.jwtBuilder);
+
+  get myPublicClaim => claim("my_public_claim");
+}
+```
+
+
 
 See more: [example](/example/lib/main.dart);
 

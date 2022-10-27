@@ -1,3 +1,7 @@
+## 1.1.0
+
+* Added new feature claims.
+
 ## 1.0.2
 
 * TODO: update doc.
