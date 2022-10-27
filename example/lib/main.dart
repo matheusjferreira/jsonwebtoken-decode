@@ -32,9 +32,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final String _token =
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-  JwtBuilder? _jwtBuilder;
-  Payload? _payload;
-  Header? _header;
+  late JwtBuilder _jwtBuilder;
+  late HeaderClaims _headerClaims;
+  late PayloadClaims _payloadClaims;
+  late OpenIdClaims _openIdClaims;
+
   final _headerTextStyle = const TextStyle(color: Colors.red);
   final _payloadTextStyle = const TextStyle(color: Colors.purple);
   final _verifySignatureTextStyle = const TextStyle(color: Colors.cyan);
@@ -44,8 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
 
     _jwtBuilder = JwtBuilder.fromToken(_token);
-    _payload = _jwtBuilder!.payload;
-    _header = _jwtBuilder!.header;
+    _payloadClaims = PayloadClaims(_jwtBuilder);
+    _headerClaims = HeaderClaims(_jwtBuilder);
+    _openIdClaims = OpenIdClaims(_jwtBuilder);
   }
 
   @override
@@ -115,11 +118,11 @@ class _MyHomePageState extends State<MyHomePage> {
           style: _headerTextStyle,
         ),
         Text(
-          '    "alg" : "${_header!.claim('alg')}"',
+          '    "alg" : "${_headerClaims.alg}"',
           style: _headerTextStyle,
         ),
         Text(
-          '    "typ" : "${_header!.claim('typ')}"',
+          '    "typ" : "${_headerClaims.typ}"',
           style: _headerTextStyle,
         ),
         Text(
@@ -133,15 +136,15 @@ class _MyHomePageState extends State<MyHomePage> {
           style: _payloadTextStyle,
         ),
         Text(
-          '    "sub" : "${_payload!.claim('sub')}"',
+          '    "sub" : "${_payloadClaims.sub}"',
           style: _payloadTextStyle,
         ),
         Text(
-          '    "name" : "${_payload!.claim('name')}"',
+          '    "name" : "${_openIdClaims.name}"',
           style: _payloadTextStyle,
         ),
         Text(
-          '    "iat" : "${_payload!.claim('iat')}"',
+          '    "iat" : "${_payloadClaims.iat}"',
           style: _payloadTextStyle,
         ),
         Text(
