@@ -1,18 +1,18 @@
-import 'claims.dart';
+import './payload_claims.dart';
 
-class KeyCloakClaims extends Claims {
-  KeyCloakClaims(super.payload);
+class KeycloakClaims extends PayloadClaims {
+  KeycloakClaims(super.jwtBuilder);
 
   List get rolesRealmAccess {
-    final realmAccess = part.claim('realm_access');
+    final realmAccess = claim('realm_access');
     return realmAccess['roles'];
   }
 
   List get rolesAccount {
-    final resourceAccess = part.claim('resource_access');
+    final resourceAccess = claim('resource_access');
     final account = resourceAccess['account'];
     return account['roles'];
   }
 
-  String get typ => part.claim("typ");
+  get typ => claim("typ");
 }

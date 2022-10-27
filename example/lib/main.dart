@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jsonwebtoken_decode/builder/parts/jwt_parts/header_part.dart';
-import 'package:jsonwebtoken_decode/builder/parts/jwt_parts/payload_part.dart';
-import 'package:jsonwebtoken_decode/jwt_app.dart';
+import 'package:jsonwebtoken_decode/jsonwebtoken_decode.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final String _token =
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-  JWTApp? _app;
+  JwtBuilder? _jwtBuilder;
   Payload? _payload;
   Header? _header;
   final _headerTextStyle = const TextStyle(color: Colors.red);
@@ -45,9 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
 
-    _app = JWTApp(_token);
-    _payload = _app!.payload;
-    _header = _app!.header;
+    _jwtBuilder = JwtBuilder.fromToken(_token);
+    _payload = _jwtBuilder!.payload;
+    _header = _jwtBuilder!.header;
   }
 
   @override

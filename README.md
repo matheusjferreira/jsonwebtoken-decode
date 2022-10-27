@@ -31,16 +31,16 @@ Package for decoding Json Web Token (JWT), and selecting specific claims.
 // ...
 
 final String _token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-JWTApp? _app;
+JwtBuilder? _jwtBuilder;
 Payload? _payload;
 Header? _header;
 
 @override
 void initState() {
     super.initState();
-    _app = JWTApp(_token);
-    _payload = _app!.payload;
-    _header = _app!.header;
+    _jwtBuilder = JwtBuilder.fromToken(_token);
+    _payload = _jwtBuilder!.payload;
+    _header = _jwtBuilder!.header;
 }
 
 // ...

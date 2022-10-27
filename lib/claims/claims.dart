@@ -1,7 +1,7 @@
-import '../builder/parts/part.dart';
+import '../builder/jwt_builder.dart';
 
 class Claims {
-  final Part part;
+  final JwtBuilder jwtBuilder;
 
-  Claims(this.part);
+  Claims(this.jwtBuilder);
 }
