@@ -1,4 +1,3 @@
-import 'package:jsonwebtoken_decode/claims/claims.dart';
 import 'package:jsonwebtoken_decode/jsonwebtoken_decode.dart';
 
 class PayloadClaims extends Claims {

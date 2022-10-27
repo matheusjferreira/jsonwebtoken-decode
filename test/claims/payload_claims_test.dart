@@ -1,6 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:jsonwebtoken_decode/claims/keycloak_claims.dart';
-import 'package:jsonwebtoken_decode/claims/payload_claims.dart';
 import 'package:jsonwebtoken_decode/jsonwebtoken_decode.dart';
 
 void main() {
