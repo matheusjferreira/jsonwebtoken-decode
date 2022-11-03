@@ -1,3 +1,6 @@
+## 1.1.2
+
+* TODO: update doc.
 ## 1.1.1
 
 * TODO: update doc.

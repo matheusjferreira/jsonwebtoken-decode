@@ -30,7 +30,7 @@ Package for decoding Json Web Token (JWT), and selecting specific claims.
 ```dart
 // ...
 
-final String _token ="valid_token";
+final String _token ='valid_token';
 JwtBuilder? _jwtBuilder;
 Payload? _payload;
 Header? _header;
@@ -55,7 +55,7 @@ Text('${_payload!.claim('name')}'),
 ```dart
 // ...
 
-final String _token ="valid_token";
+final String _token ='valid_token';
 JwtBuilder? _jwtBuilder;
 PayloadClaims? _payloadClaims;
 OpenIdClaims? _openIdClaims;
