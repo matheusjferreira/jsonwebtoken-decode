@@ -45,7 +45,7 @@ void initState() {
 
 // ...
 
-Text('${_payload!.claim('name')'),
+Text('${_payload!.claim('name')}'),
 ```
 
 
@@ -74,10 +74,10 @@ void initState() {
 
 // ...
 
-Text('${_payloadClaims!.sub'),
-Text('${_openIdClaims!.name'),
-Text('${_keycloakClaims!.rolesRealmAccess'),
-Text('${_headerClaims!.typ'),
+Text('${_payloadClaims!.sub}'),
+Text('${_openIdClaims!.name}'),
+Text('${_keycloakClaims!.rolesRealmAccess}'),
+Text('${_headerClaims!.typ}'),
 ```
 
 
@@ -88,7 +88,7 @@ Text('${_headerClaims!.typ'),
 class MyClaims extends PayloadClaims {
   MyClaims(super.jwtBuilder);
 
-  get myPublicClaim => claim("my_public_claim");
+  get myPublicClaim => claim('my_public_claim');
 }
 ```
 
